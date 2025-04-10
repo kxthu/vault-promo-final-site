@@ -1,13 +1,13 @@
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
-  background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%);
+  background: radial-gradient(circle at center, #111, #000);
   color: white;
-  overflow-x: hidden;
+  text-align: center;
 }
 
-.glow {
-  text-shadow: 0 0 5px #fff, 0 0 10px #f0f, 0 0 20px #0ff, 0 0 40px gold;
+.glow-text {
+  text-shadow: 0 0 8px #fff, 0 0 15px #f0f, 0 0 30px #0ff, 0 0 45px gold;
   animation: flicker 2s infinite;
 }
 
@@ -20,12 +20,24 @@ body {
   }
 }
 
+.button {
+  background: gold;
+  color: black;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.2em;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+  font-weight: bold;
+}
+
 .panel {
-  border-radius: 1rem;
-  border: 2px solid #ffd700;
-  background: linear-gradient(to bottom, #1f1f1f, #000);
-  box-shadow: 0 0 20px gold;
-  padding: 1rem;
-  margin: 1rem;
-  text-align: center;
+  background: #1b1b1b;
+  border: 2px solid gold;
+  border-radius: 15px;
+  box-shadow: 0 0 15px gold;
+  padding: 20px;
+  margin: 20px auto;
+  width: 300px;
 }
