@@ -1,6 +1,31 @@
 body {
   margin: 0;
-  font-family: "Arial", sans-serif;
-  background-color: #0a0a0a;
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%);
   color: white;
+  overflow-x: hidden;
+}
+
+.glow {
+  text-shadow: 0 0 5px #fff, 0 0 10px #f0f, 0 0 20px #0ff, 0 0 40px gold;
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.4;
+  }
+}
+
+.panel {
+  border-radius: 1rem;
+  border: 2px solid #ffd700;
+  background: linear-gradient(to bottom, #1f1f1f, #000);
+  box-shadow: 0 0 20px gold;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
 }
