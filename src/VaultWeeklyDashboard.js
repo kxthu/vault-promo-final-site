@@ -1,22 +1,25 @@
 import React, { useEffect, useState } from 'react';
 
 const VaultWeeklyDashboard = () => {
-  const [dayOfWeek, setDayOfWeek] = useState(new Date().getDay());
+  const [dayOfWeek, setDayOfWeek] = useState(new Date().getDay()); // 0 = Sunday, 1 = Monday, ...
   const [revealedDigits, setRevealedDigits] = useState([]);
   const [participants, setParticipants] = useState(87);
   const [jackpot, setJackpot] = useState(1000);
   const [code, setCode] = useState('738251');
 
   useEffect(() => {
-    const digitsToReveal = Math.min(dayOfWeek, 4);
+    const digitsToReveal = Math.min(dayOfWeek >= 1 && dayOfWeek <= 4 ? dayOfWeek - 1 : 4, 4); // Mon-Thu reveal 1-4 digits
     const revealed = code.slice(0, digitsToReveal).split('');
     setRevealedDigits(revealed);
 
-    const startDate = new Date('2025-04-07');
-    const now = new Date();
-    const weeksPassed = Math.floor((now - startDate) / (7 * 24 * 60 * 60 * 1000));
-    setJackpot(1000 + weeksPassed * 1000);
-  }, [dayOfWeek]);
+    // Jackpot logic: starts at 1000, loses 20% for each digit revealed (max 4)
+    let newJackpot = 1000;
+    for (let i = 0; i < digitsToReveal; i++) {
+      newJackpot *= 0.8;
+    }
+
+    setJackpot(Math.floor(newJackpot)); // round down to nearest dollar
+  }, [dayOfWeek, code]);
 
   return (
     <div>
