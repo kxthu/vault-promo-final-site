@@ -1,43 +1,39 @@
-body {
-  margin: 0;
-  font-family: 'Orbitron', sans-serif;
-  background: radial-gradient(circle at center, #111, #000);
+.dashboard-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: #000;
   color: white;
-  text-align: center;
-}
-
-.glow-text {
-  text-shadow: 0 0 8px #fff, 0 0 15px #f0f, 0 0 30px #0ff, 0 0 45px gold;
-  animation: flicker 2s infinite;
-}
-
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-  }
-  20%, 24%, 55% {
-    opacity: 0.4;
-  }
-}
-
-.button {
-  background: gold;
-  color: black;
-  border: none;
-  padding: 12px 24px;
-  font-size: 1.2em;
-  border-radius: 10px;
-  cursor: pointer;
-  margin: 10px;
-  font-weight: bold;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .panel {
-  background: #1b1b1b;
-  border: 2px solid gold;
-  border-radius: 15px;
-  box-shadow: 0 0 15px gold;
-  padding: 20px;
-  margin: 20px auto;
-  width: 300px;
+  background-color: #111;
+  border: 2px solid #444;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 0 10px #0f0;
+}
+
+.glow-text {
+  color: #0ff;
+  text-shadow: 0 0 8px #0ff;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.value {
+  font-size: 2rem;
+  color: #adff2f;
+}
+
+.footer {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #aaa;
+  font-size: 1rem;
+  margin-top: 2rem;
 }
