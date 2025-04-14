@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import VaultWeeklyDashboard from './VaultWeeklyDashboard';
 import VaultCodeEntryGame from './VaultCodeEntryGame';
+import VaultWeeklyDashboard from './components/VaultWeeklyDashboard';
+
+function App() {
+  return (
+    <div>
+      <VaultWeeklyDashboard />
+    </div>
+  );
+}
+
 
 const App = () => {
   const [view, setView] = useState('dashboard');
